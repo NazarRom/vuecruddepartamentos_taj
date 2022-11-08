@@ -2,7 +2,7 @@
   <div>
     <h1>Update</h1>
     <div style="width:500px;margin:0 auto" v-if="departamento">
-        <form>
+        <form v-on:submit.prevent="updateDepartamento()">
             <label>Número: </label>
             <input type="hidden"
             v-model="departamento.numero"/><br/>
@@ -14,6 +14,7 @@
              <label>Localidad: </label>
             <input type="text"
             v-model="departamento.localidad"/><br/>
+            <button class="btn btn-success">Modificar</button>
         </form>
     </div>
   </div>
@@ -35,6 +36,14 @@ mounted(){
     services.findDepartamentos(this.id).then(result=>{
         this.departamento = result;
     })
+},
+methods:{
+    updateDepartamento(){
+        services.updateDepartamento(this.departamento).then(result=>{
+            console.log(result)
+            this.$router.push("/");
+        })
+    }
 }
 }
 </script>

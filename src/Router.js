@@ -3,6 +3,7 @@ import DepartamentosComponent from './components/DepartamentosComponent.vue'
 import InsertDepartamento from './components/InsertDepartamento.vue'
 import DetallesDepartamento from './components/DetallesDepartamento.vue'
 import UpdateDepartamento from './components/UpdateDepartamento.vue'
+import DeleteDepartamento from './components/DeleteDepartamento.vue'
 const routes = [
     {
         path:"/",component: DepartamentosComponent
@@ -16,6 +17,9 @@ const routes = [
     },
     {
         path:"/update/:id",component:UpdateDepartamento
+    },
+    {
+        path:"/delete/:id",component:DeleteDepartamento
     }
     
 ]

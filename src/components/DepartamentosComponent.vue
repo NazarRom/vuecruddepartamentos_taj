@@ -21,12 +21,34 @@
             <td>{{ dept.localidad }}</td>
             <td>
               <router-link
-              :to="'/detalles/'+dept.numero+'/'+dept.nombre+'/'+dept.localidad" class="btn btn-success">
-              Details</router-link>
-            
+                style="margin-left: 10px"
+                :to="
+                  '/detalles/' +
+                  dept.numero +
+                  '/' +
+                  dept.nombre +
+                  '/' +
+                  dept.localidad
+                "
+                class="btn btn-success"
+              >
+                Details</router-link
+              >
+
               <router-link
-              :to="'/update/'+dept.numero" class="btn btn-warning">
-              Edit</router-link>
+                style="margin-left: 10px"
+                :to="'/update/' + dept.numero"
+                class="btn btn-warning"
+              >
+                Edit</router-link
+              >
+
+              <router-link
+                style="margin-left: 10px"
+                :to="'/delete/' + dept.numero"
+                class="btn btn-danger"
+                >Delete</router-link
+              >
             </td>
           </tr>
         </tbody>
